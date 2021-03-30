@@ -50,6 +50,7 @@ public class GarmentService {
 		}
 		foundGarment.setName(garment.getName());
 		foundGarment.setDescription(garment.getDescription());
+		foundGarment.setPatterns(garment.getPatterns());
 		return repo.save(foundGarment);
 	}
 	

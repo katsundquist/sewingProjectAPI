@@ -2,26 +2,26 @@ package com.promineotech.sewingProject.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Garment {
+public class Pattern {
 
 	private Long id;
 	private String name;
 	private String description;
-	private Set<Pattern> patterns;
 	
 	@JsonIgnore
-	private Notebook notebook;
+	private Set<Garment> garments;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -49,22 +49,16 @@ public class Garment {
 		this.description = description;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "notebookId")
-	public Notebook getNotebook() {
-		return notebook;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "pattern_garment",
+				joinColumns = @JoinColumn(name = "garmentId", referencedColumnName = "id"),
+				inverseJoinColumns = @JoinColumn(name = "patternId", referencedColumnName = "id"))
+	public Set<Garment> getGarments() {
+		return garments;
 	}
 
-	public void setNotebook(Notebook notebook) {
-		this.notebook = notebook;
-	}
+	public void setGarments(Set<Garment> garments) {
+		this.garments = garments;
+	} 
 
-	@ManyToMany(mappedBy = "garments")
-	public Set<Pattern> getPatterns() {
-		return patterns;
-	}
-
-	public void setPatterns(Set<Pattern> patterns) {
-		this.patterns = patterns;
-	}
 }
