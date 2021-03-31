@@ -41,7 +41,7 @@ public class FabricService {
 		fabric.setUser(user);
 		return repo.save(fabric);
 	}
-	
+	/*
 	//update fabric overall
 	public Fabric updateFabric(Fabric fabric, Long id) {
 		Fabric oldFabric = repo.findById(id).get();
@@ -55,5 +55,5 @@ public class FabricService {
 	public void deleteFabric(Long id) {
 		repo.deleteById(id);
 	}
-	
+	*/
 }

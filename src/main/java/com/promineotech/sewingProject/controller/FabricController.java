@@ -26,7 +26,7 @@ public class FabricController {
 		return new ResponseEntity<Object>(service.getFabricsByUser(), HttpStatus.OK);
 	}
 	
-	//to get a particular fabric
+	//to get a particular fabric by id
 	@RequestMapping(value="/{fabricId}", method=RequestMethod.GET)
 	public ResponseEntity<Object> getAFabric(@PathVariable Long id) {
 		return new ResponseEntity<Object>(service.getFabric(id), HttpStatus.OK);

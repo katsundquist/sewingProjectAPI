@@ -19,7 +19,7 @@ public class Garment {
 	private String name;
 	private String description;
 	private Set<Pattern> patterns;
-	private Set<Fabric> fabrics;
+	//private Set<Fabric> fabrics;
 	
 	@JsonIgnore
 	private Notebook notebook;
