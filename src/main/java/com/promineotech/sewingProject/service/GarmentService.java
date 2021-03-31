@@ -51,6 +51,7 @@ public class GarmentService {
 		foundGarment.setName(garment.getName());
 		foundGarment.setDescription(garment.getDescription());
 		foundGarment.setPatterns(garment.getPatterns());
+		//foundGarment.setFabrics(garment.getFabrics());
 		return repo.save(foundGarment);
 	}
 	

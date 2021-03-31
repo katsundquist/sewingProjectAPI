@@ -15,6 +15,7 @@ public class User {
 	private Long id;
 	private String username;
 	private Set<Notebook> notebooks;
+	private Set<Fabric> fabrics;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +42,15 @@ public class User {
 
 	public void setNotebooks(Set<Notebook> notebooks) {
 		this.notebooks = notebooks;
+	}
+
+	@OneToMany(mappedBy = "user")
+	public Set<Fabric> getFabrics() {
+		return fabrics;
+	}
+
+	public void setFabrics(Set<Fabric> fabrics) {
+		this.fabrics = fabrics;
 	}
 
 }

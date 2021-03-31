@@ -19,6 +19,7 @@ public class Garment {
 	private String name;
 	private String description;
 	private Set<Pattern> patterns;
+	private Set<Fabric> fabrics;
 	
 	@JsonIgnore
 	private Notebook notebook;
@@ -59,6 +60,7 @@ public class Garment {
 		this.notebook = notebook;
 	}
 
+	//this is not working presently.
 	@ManyToMany(mappedBy = "garments")
 	public Set<Pattern> getPatterns() {
 		return patterns;
@@ -67,4 +69,14 @@ public class Garment {
 	public void setPatterns(Set<Pattern> patterns) {
 		this.patterns = patterns;
 	}
+/*
+	@ManyToMany(mappedBy = "garments")
+	public Set<Fabric> getFabrics() {
+		return fabrics;
+	}
+
+	public void setFabrics(Set<Fabric> fabrics) {
+		this.fabrics = fabrics;
+	}
+	*/
 }

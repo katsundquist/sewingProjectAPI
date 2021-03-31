@@ -3,12 +3,16 @@ C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewi
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\controller\UserController.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\repository\PatternRepository.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\service\UserService.java
+C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\controller\FabricController.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\controller\GarmentController.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\entity\User.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\repository\UserRepository.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\service\GarmentService.java
+C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\entity\Fabric.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\service\NotebookService.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\entity\Pattern.java
+C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\repository\FabricRepository.java
+C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\service\FabricService.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\App.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\repository\GarmentRepository.java
 C:\Users\Kat\eclipse-workspace\sewingProject\src\main\java\com\promineotech\sewingProject\repository\NotebookRepository.java
