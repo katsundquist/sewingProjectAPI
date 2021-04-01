@@ -20,13 +20,18 @@ public class GarmentController {
 	private GarmentService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<Object> getAllGarments(){
+	public ResponseEntity<Object> getAllGarments(@PathVariable Long userId, @PathVariable Long notebookId){
 		return new ResponseEntity<Object>(service.getAllGarments(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/{garmentId}", method=RequestMethod.GET)
-	public ResponseEntity<Object> getGarment(@PathVariable Long garmentId) {
-		return new ResponseEntity<Object>(service.getGarment(garmentId), HttpStatus.OK);
+	public ResponseEntity<Object> getGarment(@PathVariable Long userId, @PathVariable Long notebookId,
+                                             @PathVariable Long garmentId) {
+		Garment garment = service.getGarment(userId, notebookId, garmentId);
+		if (garment != null) {
+			return new ResponseEntity<Object>(garment, HttpStatus.OK);
+		}
+		return new ResponseEntity<Object>("Requested garment not found", HttpStatus.NOT_FOUND);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)

@@ -1,5 +1,7 @@
 package com.promineotech.sewingProject.controller;
 
+import java.util.Iterator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,7 @@ import com.promineotech.sewingProject.entity.Fabric;
 import com.promineotech.sewingProject.service.FabricService;
 
 @RestController
-@RequestMapping("/users/{userId)/fabric")
+@RequestMapping("/users/{userId}/fabrics")
 public class FabricController {
 
 	@Autowired
@@ -22,8 +24,15 @@ public class FabricController {
 	
 	//to get all of a user's fabrics.
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<Object> getUsersFabric() {
-		return new ResponseEntity<Object>(service.getFabricsByUser(), HttpStatus.OK);
+	public ResponseEntity<Object> getUsersFabric(@PathVariable Long userId) {
+		Iterable<Fabric> fabrics = service.getFabricsByUser(userId);
+		if (fabrics != null) {
+			Iterator<Fabric> it = fabrics.iterator();
+			if (it.hasNext()) {
+				return new ResponseEntity<Object>(fabrics, HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<Object>("No fabrics for user.", HttpStatus.NOT_FOUND);
 	}
 	
 	//to get a particular fabric by id

@@ -10,6 +10,10 @@ import com.promineotech.sewingProject.entity.User;
 import com.promineotech.sewingProject.repository.FabricRepository;
 import com.promineotech.sewingProject.repository.UserRepository;
 
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Set;
+
 @Service
 public class FabricService {
 
@@ -23,8 +27,14 @@ public class FabricService {
 	
 	//get all fabrics by particular user, this is not right, but I'm not sure how 
 	//to change it to only get fabrics by particular user.
-	public Iterable<Fabric> getFabricsByUser(){
-		return repo.findAll();
+	public Iterable<Fabric> getFabricsByUser(Long userId){
+		return(repo.findByUserId(userId));
+//		Optional<User> userResponse = userRepo.findById(userId);
+//		if (userResponse.isPresent()) {
+//			User user = userResponse.get();
+//			return(user.getFabrics());
+//		}
+//		return(new ArrayList<Fabric>());
 	}
 	
 	//get fabric by id

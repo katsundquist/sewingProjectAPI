@@ -25,8 +25,8 @@ public class Fabric {
 	@JsonIgnore 
 	private User user;
 	
-	//@JsonIgnore
-	//private Set<Garment> garments;
+	@JsonIgnore
+	private Set<Garment> garments;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -71,11 +71,8 @@ public class Fabric {
 	public void setUser(User user) {
 		this.user = user;
 	}
-/*
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "fabric_garment",
-				joinColumns = @JoinColumn(name = "garmentId", referencedColumnName = "id"),
-				inverseJoinColumns = @JoinColumn(name = "fabricId", referencedColumnName = "id"))
+
+	@ManyToMany(mappedBy = "fabrics",cascade = CascadeType.ALL)
 	public Set<Garment> getGarments() {
 		return garments;
 	}
@@ -83,8 +80,4 @@ public class Fabric {
 	public void setGarments(Set<Garment> garments) {
 		this.garments = garments;
 	} 
-*/
-	
-	
-	
 }

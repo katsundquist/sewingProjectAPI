@@ -1,5 +1,7 @@
 package com.promineotech.sewingProject.service;
 
+import java.util.Optional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.promineotech.sewingProject.entity.Garment;
 import com.promineotech.sewingProject.entity.Notebook;
+import com.promineotech.sewingProject.entity.User;
 import com.promineotech.sewingProject.repository.GarmentRepository;
 import com.promineotech.sewingProject.repository.NotebookRepository;
 //import com.promineotech.sewingProject.repository.UserRepository;
@@ -28,8 +31,24 @@ public class GarmentService {
 	}
 	
 	//get particular garment
-	public Garment getGarment(Long id) {
-		return repo.findById(id).get();
+	public Garment getGarment(Long userId, Long notebookId, Long id) {
+		Optional<Garment> responseGarment = repo.findGarment(userId, notebookId, id);
+		if (responseGarment.isPresent()) {
+			return(responseGarment.get());
+		}
+		return(null);
+//		Optional<Garment> responseGarment = repo.findById(id);
+//		if (responseGarment.isPresent()) {
+//			Garment garment = responseGarment.get();
+//			Notebook notebook = garment.getNotebook();
+//			if (notebook.getId() == notebookId) {
+//				User user = notebook.getUser();
+//			    if (user.getId() == userId) {
+//				   return(garment);
+//			    }
+//			}
+//		}
+//		return(null);
 	}
 	
 	//create garment in database

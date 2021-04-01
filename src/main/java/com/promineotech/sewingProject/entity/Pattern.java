@@ -49,10 +49,7 @@ public class Pattern {
 		this.description = description;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "pattern_garment",
-				joinColumns = @JoinColumn(name = "garmentId", referencedColumnName = "id"),
-				inverseJoinColumns = @JoinColumn(name = "patternId", referencedColumnName = "id"))
+	@ManyToMany(mappedBy="patterns",cascade = CascadeType.ALL)
 	public Set<Garment> getGarments() {
 		return garments;
 	}
