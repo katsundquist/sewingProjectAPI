@@ -66,17 +66,20 @@ public class NotebookService {
 		//	throw new Exception("User not found.");
 		//}
 		if (user.getId() == userId) {
-		try {
-			Notebook oldNotebook = repo.findById(id).get();
-			oldNotebook.setName(notebook.getName());
-			oldNotebook.setDescription(notebook.getDescription());
-			return repo.save(oldNotebook);
-		} catch (Exception e) {
-			logger.error("Exception occurrec while trying to update notebook: " + id, e);
-			throw new Exception("Unable to update notebook.");
+			try {
+				Notebook oldNotebook = getNotebook(userId, id);
+				oldNotebook.setName(notebook.getName());
+				oldNotebook.setDescription(notebook.getDescription());
+				return repo.save(oldNotebook);
+			} catch (Exception e) {
+				logger.error("Exception occurrec while trying to update notebook: " + id, e);
+				throw new Exception("Unable to update notebook.");
+			}
+		} else {
+			throw new Exception("User not found.");
+			
 		}
-		}
-		return null;
+		
 	}
 
 	//delete notebook	this doesn't work, will delete regardless of userId
