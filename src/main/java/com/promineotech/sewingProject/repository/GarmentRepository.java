@@ -1,11 +1,13 @@
 package com.promineotech.sewingProject.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import com.promineotech.sewingProject.entity.Fabric;
 import com.promineotech.sewingProject.entity.Garment;
 
 public interface GarmentRepository extends CrudRepository<Garment, Long>{
@@ -20,4 +22,8 @@ public interface GarmentRepository extends CrudRepository<Garment, Long>{
     public Optional<Garment> findGarment(@Param("user_id") Long userId, 
     		                             @Param("notebook_id") Long notebookId, 
     		                             @Param("id") Long id);
+    
+    public List<Garment> findByNotebookId(Long notebookId); 
+    
+    public List<Fabric> findByUserId(Long userId); 
 }

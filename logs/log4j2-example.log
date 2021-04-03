@@ -2210,3 +2210,992 @@ Caused by: org.hibernate.MappingException: Repeated column in mapping for entity
 			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2021-03-31 15:43:10.795  INFO KatTop
 			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-03-31 21:00:51.526  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 18800 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-03-31 21:00:51.600  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-03-31 21:00:57.008  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 21:00:57.649  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 512 ms. Found 5 JPA repository interfaces.
+2021-03-31 21:01:01.382  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 21:01:01.418  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-03-31 21:01:01.427  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-31 21:01:01.433  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-31 21:01:01.946  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-31 21:01:01.949  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9991 ms
+2021-03-31 21:01:02.802  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 21:01:03.011  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-31 21:01:03.517  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-31 21:01:03.858  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-03-31 21:01:05.975 ERROR KatTop
+			--- [           main] c.z.h.p.HikariPool                       : HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.promineotech.sewingProject.App.main(App.java:13)
+2021-03-31 21:01:05.993  WARN KatTop
+			--- [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.promineotech.sewingProject.App.main(App.java:13)
+2021-03-31 21:01:06.050  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-31 21:01:09.135  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-03-31 21:01:10.226 ERROR KatTop
+			--- [           main] c.z.h.p.HikariPool                       : HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:67)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.getTables(InformationExtractorJdbcDatabaseMetaDataImpl.java:333)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:120)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:65)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:207)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at com.promineotech.sewingProject.App.main(App.java:13)
+2021-03-31 21:01:10.234  WARN KatTop
+			--- [           main] o.h.e.j.s.SqlExceptionHelper             : SQL Error: 1045, SQLState: 28000
+2021-03-31 21:01:10.241 ERROR KatTop
+			--- [           main] o.h.e.j.s.SqlExceptionHelper             : Access denied for user 'root'@'localhost' (using password: YES)
+2021-03-31 21:01:10.262 ERROR KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-03-31 21:01:10.270  WARN KatTop
+			--- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2021-03-31 21:02:33.085  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 16308 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-03-31 21:02:33.116  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-03-31 21:02:34.732  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 21:02:34.904  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 5 JPA repository interfaces.
+2021-03-31 21:02:36.233  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 21:02:36.256  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-03-31 21:02:36.258  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-31 21:02:36.261  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-31 21:02:36.481  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-31 21:02:36.482  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3197 ms
+2021-03-31 21:02:36.795  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 21:02:36.898  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-31 21:02:37.148  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-31 21:02:37.360  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-03-31 21:02:38.181  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-03-31 21:02:38.247  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-31 21:02:41.546  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 21:02:41.565  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 21:02:43.043  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 21:02:43.283  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 21:02:43.684  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-03-31 21:02:43.762  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-31 21:02:43.785  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 11.688 seconds (JVM running for 13.789)
+2021-03-31 21:03:55.124  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-31 21:03:55.129  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 21:03:55.132  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-03-31 21:03:55.144  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-03-31 21:05:39.517  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 12240 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-03-31 21:05:39.542  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-03-31 21:05:40.958  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-31 21:05:41.111  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 125 ms. Found 5 JPA repository interfaces.
+2021-03-31 21:05:42.228  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-03-31 21:05:42.246  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-03-31 21:05:42.248  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-03-31 21:05:42.251  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-31 21:05:42.449  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-03-31 21:05:42.450  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2799 ms
+2021-03-31 21:05:42.765  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-31 21:05:42.871  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-31 21:05:43.175  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-31 21:05:43.357  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-03-31 21:05:43.985  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-03-31 21:05:44.027  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-03-31 21:05:46.639  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-31 21:05:46.659  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-31 21:05:47.652  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-31 21:05:47.890  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-31 21:05:48.244  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-03-31 21:05:48.295  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-31 21:05:48.330  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 9.615 seconds (JVM running for 11.344)
+2021-04-03 10:24:56.772  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 22040 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 10:24:56.797  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 10:24:57.907  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 10:24:58.010  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2021-04-03 10:24:58.923  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 10:24:58.940  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:24:58.942  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 10:24:58.943  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 10:24:59.104  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 10:24:59.106  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2217 ms
+2021-04-03 10:24:59.361  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 10:24:59.461  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 10:24:59.721  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 10:24:59.900  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 10:25:00.640  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 10:25:00.673  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 10:25:02.990  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 10:25:03.007  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:25:03.972  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 10:25:04.180  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:25:04.579  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:25:04.629  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 10:25:04.647  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 8.52 seconds (JVM running for 10.024)
+2021-04-03 10:25:28.225  INFO KatTop
+			--- [nio-8080-exec-3] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 10:25:28.226  INFO KatTop
+			--- [nio-8080-exec-3] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 10:25:28.229  INFO KatTop
+			--- [nio-8080-exec-3] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2021-04-03 10:34:40.267  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:34:40.272  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:34:40.276  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 10:34:40.295  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 10:34:54.369  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 10860 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 10:34:54.387  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 10:34:55.529  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 10:34:55.635  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 5 JPA repository interfaces.
+2021-04-03 10:34:56.619  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 10:34:56.637  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:34:56.638  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 10:34:56.642  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 10:34:56.835  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 10:34:56.836  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2356 ms
+2021-04-03 10:34:57.117  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 10:34:57.222  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 10:34:57.498  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 10:34:57.688  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 10:34:58.452  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 10:34:58.486  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 10:35:00.556  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 10:35:00.572  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:35:01.465  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 10:35:01.629  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:35:01.985  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:35:02.031  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 10:35:02.046  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 8.288 seconds (JVM running for 10.135)
+2021-04-03 10:35:08.172  INFO KatTop
+			--- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 10:35:08.173  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 10:35:08.180  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2021-04-03 10:50:29.229  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:50:29.236  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:50:29.239  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 10:50:29.255  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 10:50:43.764  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 15104 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 10:50:43.782  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 10:50:44.902  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 10:50:45.008  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2021-04-03 10:50:45.919  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 10:50:45.935  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:50:45.937  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 10:50:45.939  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 10:50:46.118  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 10:50:46.119  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2248 ms
+2021-04-03 10:50:46.379  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 10:50:46.467  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 10:50:46.681  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 10:50:46.857  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 10:50:47.399  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 10:50:47.427  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 10:50:49.369  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 10:50:49.386  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:50:50.205  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 10:50:50.374  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:50:50.675  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:50:50.715  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 10:50:50.732  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.552 seconds (JVM running for 8.952)
+2021-04-03 10:50:58.338  INFO KatTop
+			--- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 10:50:58.339  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 10:50:58.345  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2021-04-03 10:56:04.440  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:56:04.446  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:56:04.450  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 10:56:04.466  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 10:56:18.680  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 16792 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 10:56:18.700  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 10:56:19.827  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 10:56:19.932  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+2021-04-03 10:56:20.867  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 10:56:20.883  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:56:20.886  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 10:56:20.889  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 10:56:21.067  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 10:56:21.067  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2274 ms
+2021-04-03 10:56:21.342  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 10:56:21.428  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 10:56:21.649  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 10:56:21.827  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 10:56:22.389  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 10:56:22.419  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 10:56:24.390  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 10:56:24.408  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 10:56:25.234  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 10:56:25.412  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 10:56:25.735  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 10:56:25.772  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 10:56:25.788  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.723 seconds (JVM running for 9.132)
+2021-04-03 10:56:43.550  INFO KatTop
+			--- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 10:56:43.551  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 10:56:43.562  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 6 ms
+2021-04-03 11:03:32.591  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:03:32.597  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:03:32.600  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:03:32.617  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:03:47.406  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 22800 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:03:47.424  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:03:48.603  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:03:48.719  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:03:49.744  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:03:49.760  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:03:49.762  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:03:49.764  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:03:49.965  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:03:49.966  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2450 ms
+2021-04-03 11:03:50.255  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:03:50.344  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:03:50.576  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:03:50.793  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:03:51.434  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:03:51.463  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:03:53.518  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:03:53.536  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:03:54.465  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:03:54.650  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:03:54.983  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:03:55.033  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:03:55.055  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 8.301 seconds (JVM running for 9.845)
+2021-04-03 11:05:45.730  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:05:45.735  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:05:45.740  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:05:45.757  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:06:01.187  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 19000 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:06:01.206  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:06:02.296  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:06:02.397  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:06:03.313  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:06:03.329  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:06:03.330  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:06:03.332  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:06:03.504  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:06:03.505  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2210 ms
+2021-04-03 11:06:03.759  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:06:03.853  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:06:04.075  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:06:04.254  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:06:04.787  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:06:04.818  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:06:06.796  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:06:06.814  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:06:07.659  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:06:07.817  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:06:08.147  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:06:08.187  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:06:08.201  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.593 seconds (JVM running for 9.029)
+2021-04-03 11:06:13.269  INFO KatTop
+			--- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 11:06:13.270  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 11:06:13.276  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2021-04-03 11:14:53.702  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:14:53.707  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:14:53.713  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:14:53.728  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:15:09.215  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 7960 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:15:09.233  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:15:10.351  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:15:10.451  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:15:11.360  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:15:11.377  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:15:11.379  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:15:11.382  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:15:11.562  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:15:11.563  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2242 ms
+2021-04-03 11:15:11.822  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:15:11.910  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:15:12.136  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:15:12.318  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:15:12.868  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:15:12.901  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:15:14.835  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:15:14.852  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:15:15.724  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:15:15.881  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:15:16.186  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:15:16.236  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:15:16.251  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.65 seconds (JVM running for 9.442)
+2021-04-03 11:15:22.514  INFO KatTop
+			--- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 11:15:22.515  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 11:15:22.520  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2021-04-03 11:26:16.875  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:26:16.881  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:26:16.885  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:26:16.902  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:26:31.595  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 1408 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:26:31.613  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:26:33.073  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:26:33.226  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 131 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:26:34.505  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:26:34.528  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:26:34.530  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:26:34.532  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:26:34.762  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:26:34.763  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3059 ms
+2021-04-03 11:26:35.121  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:26:35.239  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:26:35.551  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:26:35.807  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:26:36.549  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:26:36.590  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:26:39.011  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:26:39.031  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:26:40.180  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:26:40.404  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:26:40.831  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:26:40.885  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:26:40.910  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 10.118 seconds (JVM running for 11.866)
+2021-04-03 11:27:07.395  INFO KatTop
+			--- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 11:27:07.396  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 11:27:07.402  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2021-04-03 11:28:21.524  WARN KatTop
+			--- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'id' for method parameter of type Long]
+2021-04-03 11:28:39.388  WARN KatTop
+			--- [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'id' for method parameter of type Long]
+2021-04-03 11:33:09.415  WARN KatTop
+			--- [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "garments"]
+2021-04-03 11:34:34.222  WARN KatTop
+			--- [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.promineotech.sewingProject.entity.Pattern` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (11); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.promineotech.sewingProject.entity.Pattern` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (11)
+ at [Source: (PushbackInputStream); line: 4, column: 17] (through reference chain: com.promineotech.sewingProject.entity.Garment["patterns"]->java.util.HashSet[0])]
+2021-04-03 11:35:20.243  WARN KatTop
+			--- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (8); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (8)
+ at [Source: (PushbackInputStream); line: 5, column: 16] (through reference chain: com.promineotech.sewingProject.entity.Garment["fabrics"]->java.util.HashSet[0])]
+2021-04-03 11:35:27.327  WARN KatTop
+			--- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+ at [Source: (PushbackInputStream); line: 5, column: 2]]
+2021-04-03 11:36:21.856  WARN KatTop
+			--- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (10); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (10)
+ at [Source: (PushbackInputStream); line: 4, column: 16] (through reference chain: com.promineotech.sewingProject.entity.Garment["fabrics"]->java.util.HashSet[0])]
+2021-04-03 11:36:30.607  WARN KatTop
+			--- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (8); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (8)
+ at [Source: (PushbackInputStream); line: 4, column: 16] (through reference chain: com.promineotech.sewingProject.entity.Garment["fabrics"]->java.util.HashSet[0])]
+2021-04-03 11:40:12.903  WARN KatTop
+			--- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (9); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.promineotech.sewingProject.entity.Fabric` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (9)
+ at [Source: (PushbackInputStream); line: 4, column: 16] (through reference chain: com.promineotech.sewingProject.entity.Garment["fabrics"]->java.util.HashSet[0])]
+2021-04-03 11:49:42.000  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:49:42.004  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:49:42.008  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:49:42.020  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:50:02.640  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 9276 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:50:02.660  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:50:03.821  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:50:03.923  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:50:04.831  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:50:04.849  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:50:04.850  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:50:04.853  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:50:05.033  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:50:05.035  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2281 ms
+2021-04-03 11:50:05.294  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:50:05.380  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:50:05.639  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:50:05.864  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:50:06.528  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:50:06.558  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:50:08.600  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:50:08.622  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:50:09.430  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:50:09.594  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:50:09.897  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:50:09.934  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:50:09.952  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 8.017 seconds (JVM running for 9.628)
+2021-04-03 11:50:11.615  INFO KatTop
+			--- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 11:50:11.615  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 11:50:11.620  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 3 ms
+2021-04-03 11:57:45.503  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:57:45.508  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:57:45.513  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 11:57:45.528  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 11:58:00.288  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 13284 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 11:58:00.305  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 11:58:01.443  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 11:58:01.548  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2021-04-03 11:58:02.508  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 11:58:02.525  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:58:02.527  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 11:58:02.530  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 11:58:02.716  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 11:58:02.717  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2325 ms
+2021-04-03 11:58:02.982  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 11:58:03.072  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 11:58:03.302  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 11:58:03.480  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 11:58:04.015  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 11:58:04.045  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 11:58:05.954  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 11:58:05.972  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 11:58:06.837  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 11:58:07.136  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 11:58:07.440  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 11:58:07.478  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 11:58:07.495  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.859 seconds (JVM running for 9.469)
+2021-04-03 11:58:18.978  INFO KatTop
+			--- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 11:58:18.979  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 11:58:18.985  INFO KatTop
+			--- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 4 ms
+2021-04-03 11:58:25.390  WARN KatTop
+			--- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'id' for method parameter of type Long]
+2021-04-03 12:00:06.738  WARN KatTop
+			--- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'id' for method parameter of type Long]
+2021-04-03 12:03:41.878  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 12:03:41.884  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 12:03:41.887  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 12:03:41.903  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-04-03 12:03:56.445  INFO KatTop
+			--- [           main] c.p.s.App                                : Starting App using Java 15.0.1 on KatTop with PID 8848 (C:\Users\Kat\eclipse-workspace\sewingProject\target\classes started by Kat in C:\Users\Kat\eclipse-workspace\sewingProject)
+2021-04-03 12:03:56.467  INFO KatTop
+			--- [           main] c.p.s.App                                : No active profile set, falling back to default profiles: default
+2021-04-03 12:03:57.601  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-03 12:03:57.702  INFO KatTop
+			--- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 5 JPA repository interfaces.
+2021-04-03 12:03:58.785  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-04-03 12:03:58.801  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-03 12:03:58.803  INFO KatTop
+			--- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-04-03 12:03:58.804  INFO KatTop
+			--- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-04-03 12:03:58.984  INFO KatTop
+			--- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-04-03 12:03:58.985  INFO KatTop
+			--- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2411 ms
+2021-04-03 12:03:59.262  INFO KatTop
+			--- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-03 12:03:59.348  INFO KatTop
+			--- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-04-03 12:03:59.563  INFO KatTop
+			--- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-03 12:03:59.741  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-04-03 12:04:00.375  INFO KatTop
+			--- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-04-03 12:04:00.415  INFO KatTop
+			--- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-04-03 12:04:02.487  INFO KatTop
+			--- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-03 12:04:02.504  INFO KatTop
+			--- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 12:04:03.327  WARN KatTop
+			--- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-03 12:04:03.490  INFO KatTop
+			--- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-03 12:04:03.789  INFO KatTop
+			--- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-04-03 12:04:03.829  INFO KatTop
+			--- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-03 12:04:03.849  INFO KatTop
+			--- [           main] c.p.s.App                                : Started App in 7.993 seconds (JVM running for 9.392)
+2021-04-03 12:04:08.283  INFO KatTop
+			--- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-03 12:04:08.283  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-04-03 12:04:08.288  INFO KatTop
+			--- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2021-04-03 12:21:09.474  INFO KatTop
+			--- [extShutdownHook] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-03 12:21:09.478  INFO KatTop
+			--- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-03 12:21:09.482  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-04-03 12:21:09.495  INFO KatTop
+			--- [extShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.promineotech.sewingProject.entity.Fabric;
+import com.promineotech.sewingProject.entity.Notebook;
 import com.promineotech.sewingProject.entity.User;
 import com.promineotech.sewingProject.repository.FabricRepository;
 import com.promineotech.sewingProject.repository.UserRepository;
@@ -25,8 +26,7 @@ public class FabricService {
 	@Autowired
 	private UserRepository userRepo;
 	
-	//get all fabrics by particular user, this is not right, but I'm not sure how 
-	//to change it to only get fabrics by particular user.
+	//get all fabrics by particular user
 	public Iterable<Fabric> getFabricsByUser(Long userId){
 		return(repo.findByUserId(userId));
 //		Optional<User> userResponse = userRepo.findById(userId);
@@ -38,9 +38,24 @@ public class FabricService {
 	}
 	
 	//get fabric by id
-	public Fabric getFabric(Long id) {
-		return repo.findById(id).get();
+	//public Fabric getFabric(Long id) {
+		//return repo.findById(id).get();
+	//}
+	
+	public Fabric getFabric(Long userId, Long id) {
+		Optional <Fabric> responseFabric = repo.findById(id);
+		if (responseFabric.isPresent()) {
+			Fabric fabric = responseFabric.get();
+			if (fabric.getId() == id) {
+				User user = fabric.getUser();
+				if (user.getId() == userId) {
+					return (fabric);
+				}
+			}
+		}
+		return (null);
 	}
+	
 	
 	//create fabric
 	public Fabric createFabric(Fabric fabric, Long userId) throws Exception {
@@ -51,9 +66,16 @@ public class FabricService {
 		fabric.setUser(user);
 		return repo.save(fabric);
 	}
-	/*
+	
 	//update fabric overall
-	public Fabric updateFabric(Fabric fabric, Long id) {
+	
+	//needs FabricController
+	public Fabric updateFabric(Fabric fabric, Long userId, Long id) throws Exception {
+		//check if this User and if statement actually works.
+		User user = userRepo.findById(userId).get();
+		if (user == null) {
+			throw new Exception("User not found.");
+		}
 		Fabric oldFabric = repo.findById(id).get();
 		oldFabric.setFabricType(fabric.getFabricType());
 		oldFabric.setFiberContent(fabric.getFiberContent());
@@ -62,8 +84,10 @@ public class FabricService {
 	}
 	
 	//delete a fabric
+	
+	//needs FabricController
 	public void deleteFabric(Long id) {
 		repo.deleteById(id);
 	}
-	*/
+	
 }

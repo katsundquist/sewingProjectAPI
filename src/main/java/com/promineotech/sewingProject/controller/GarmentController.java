@@ -21,7 +21,7 @@ public class GarmentController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<Object> getAllGarments(@PathVariable Long userId, @PathVariable Long notebookId){
-		return new ResponseEntity<Object>(service.getAllGarments(), HttpStatus.OK);
+		return new ResponseEntity<Object>(service.getNotebooksGarments(notebookId), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/{garmentId}", method=RequestMethod.GET)

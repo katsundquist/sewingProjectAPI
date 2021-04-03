@@ -25,10 +25,11 @@ public class GarmentService {
 	@Autowired
 	private NotebookRepository notebookRepo;
 	
-	//return all garments
-	public Iterable<Garment> getAllGarments() {
-		return repo.findAll();
+	//return all garments in notebook
+	public Iterable<Garment> getNotebooksGarments(Long notebookId) {
+		return(repo.findByNotebookId(notebookId));
 	}
+	
 	
 	//get particular garment
 	public Garment getGarment(Long userId, Long notebookId, Long id) {
@@ -37,6 +38,11 @@ public class GarmentService {
 			return(responseGarment.get());
 		}
 		return(null);
+		
+		//this code does three queries when program runs. 
+		//the SQL statment in the repo runs four, but might actually 
+		//be more effecient with more data.  Leaving this code in  for reference.
+		
 //		Optional<Garment> responseGarment = repo.findById(id);
 //		if (responseGarment.isPresent()) {
 //			Garment garment = responseGarment.get();
@@ -70,7 +76,7 @@ public class GarmentService {
 		foundGarment.setName(garment.getName());
 		foundGarment.setDescription(garment.getDescription());
 		foundGarment.setPatterns(garment.getPatterns());
-		//foundGarment.setFabrics(garment.getFabrics());
+		foundGarment.setFabrics(garment.getFabrics());
 		return repo.save(foundGarment);
 	}
 	

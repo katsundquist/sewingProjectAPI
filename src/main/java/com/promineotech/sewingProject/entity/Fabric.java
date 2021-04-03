@@ -20,7 +20,7 @@ public class Fabric {
 	private Long id;
 	private String fabricType;
 	private String fiberContent;
-	private Long yardage;
+	private double yardage;
 	
 	@JsonIgnore 
 	private User user;
@@ -54,11 +54,11 @@ public class Fabric {
 		this.fiberContent = fiberContent;
 	}
 
-	public Long getYardage() {
+	public double getYardage() {
 		return yardage;
 	}
 
-	public void setYardage(Long yardage) {
+	public void setYardage(double yardage) {
 		this.yardage = yardage;
 	}
 

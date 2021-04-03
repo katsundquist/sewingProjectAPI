@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.promineotech.sewingProject.entity.Fabric;
+import com.promineotech.sewingProject.entity.Notebook;
 import com.promineotech.sewingProject.service.FabricService;
 
 @RestController
@@ -37,8 +38,12 @@ public class FabricController {
 	
 	//to get a particular fabric by id
 	@RequestMapping(value="/{fabricId}", method=RequestMethod.GET)
-	public ResponseEntity<Object> getAFabric(@PathVariable Long id) {
-		return new ResponseEntity<Object>(service.getFabric(id), HttpStatus.OK);
+	public ResponseEntity<Object> getAFabric(@PathVariable Long fabricId, @PathVariable Long userId) {
+		Fabric fabric = service.getFabric(userId, fabricId);
+		if (fabric != null) {
+			return new ResponseEntity<Object>(fabric, HttpStatus.OK);
+		}
+		return new ResponseEntity<Object>("Requested fabric not found.", HttpStatus.NOT_FOUND);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
@@ -49,5 +54,9 @@ public class FabricController {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 		}
+	
+	//still needs update
+	
+	//still needs delete
 	
 }
