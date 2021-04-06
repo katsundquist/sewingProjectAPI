@@ -49,7 +49,7 @@ public class Pattern {
 		this.description = description;
 	}
 
-	@ManyToMany(mappedBy="patterns",cascade = CascadeType.ALL)
+	@ManyToMany(mappedBy="patterns") //,cascade = CascadeType.ALL
 	public Set<Garment> getGarments() {
 		return garments;
 	}

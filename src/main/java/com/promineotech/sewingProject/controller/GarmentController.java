@@ -57,9 +57,9 @@ public class GarmentController {
 	
 	// @RequestBody Set<Long> patternId, removed from between
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds, @PathVariable Long id) {
+	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds, @PathVariable Long notebookId) {
 		try {
-			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, id), HttpStatus.CREATED);  //patternId removed from between
+			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, notebookId), HttpStatus.CREATED);  //patternId removed from between
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}

@@ -2,6 +2,7 @@ package com.promineotech.sewingProject.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -61,8 +62,7 @@ public class Garment {
 		this.notebook = notebook;
 	}
 
-	//this is not working presently.
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "garment_pattern",
 	           joinColumns = @JoinColumn(name = "garment_id", referencedColumnName = "id"),
 	           inverseJoinColumns = @JoinColumn(name = "pattern_id", referencedColumnName = "id"))
@@ -74,7 +74,7 @@ public class Garment {
 		this.patterns = patterns;
 	}
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "garment_fabric",
                joinColumns = @JoinColumn(name = "garment_id", referencedColumnName = "id"),
                inverseJoinColumns = @JoinColumn(name = "fabric_id", referencedColumnName = "id"))
