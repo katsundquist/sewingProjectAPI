@@ -1,17 +1,23 @@
 package com.promineotech.sewingProject.service;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.promineotech.sewingProject.entity.Fabric;
 import com.promineotech.sewingProject.entity.Garment;
 import com.promineotech.sewingProject.entity.Notebook;
+import com.promineotech.sewingProject.entity.Pattern;
 import com.promineotech.sewingProject.entity.User;
+import com.promineotech.sewingProject.repository.FabricRepository;
 import com.promineotech.sewingProject.repository.GarmentRepository;
 import com.promineotech.sewingProject.repository.NotebookRepository;
+import com.promineotech.sewingProject.repository.PatternRepository;
 //import com.promineotech.sewingProject.repository.UserRepository;
 
 @Service
@@ -24,6 +30,12 @@ public class GarmentService {
 	
 	@Autowired
 	private NotebookRepository notebookRepo;
+	
+	@Autowired
+	private FabricRepository fabricRepo;
+	
+	@Autowired
+	private PatternRepository patternRepo;
 	
 	//return all garments in notebook
 	public Iterable<Garment> getNotebooksGarments(Long notebookId) {
@@ -58,6 +70,8 @@ public class GarmentService {
 	}
 	
 	//create garment in database
+	/*
+	 * Old method that didn't allow the many to many relationship.
 	public Garment createGarment(Garment garment, Long notebookId) throws Exception {
 		Notebook notebook = notebookRepo.findById(notebookId).get();
 		if (notebook == null) {
@@ -65,6 +79,61 @@ public class GarmentService {
 		} 
 		garment.setNotebook(notebook);
 		return repo.save(garment);
+	}
+	*/
+	
+	//Set<Long> patternIds, removed from line below between the two
+	public Garment createNewGarment(Set<Long> fabricIds,  Long notebookId){
+		try {
+			Notebook notebook = notebookRepo.findById(notebookId).get();
+			Garment garment = initializeNewGarment(fabricIds, notebook);  //patternIds removed from between the two
+			return repo.save(garment);
+		} catch (Exception e) {
+			logger.error("Exception occurred while trying to create new garment");
+			throw e;
+		}
+	}
+	
+	//Set<Long> patternIds, removed from between the two below
+	
+	private Garment initializeNewGarment(Set<Long> fabricIds, Notebook notebook) {
+		Garment garment = new Garment();
+		garment.setFabrics(convertToFabricSet(fabricRepo.findAllById(fabricIds)));
+		//garment.setPatterns(convertToPatternSet(patternRepo.findAllById(patternIds)));
+		garment.setNotebook(notebook);
+		addGarmentToFabrics(garment);
+		//addGarmentToPatterns(garment);
+		return garment;
+	}
+	
+	private void addGarmentToFabrics(Garment garment) {
+		Set<Fabric> fabrics = garment.getFabrics();
+		for(Fabric fabric : fabrics) {
+			fabric.getGarments().add(garment);
+		}
+	}
+
+	private void addGarmentToPatterns(Garment garment) {
+		Set<Pattern> patterns = garment.getPatterns();
+		for(Pattern pattern : patterns) {
+			 pattern.getGarments().add(garment);
+		}
+	}
+	
+	private Set<Fabric> convertToFabricSet(Iterable<Fabric> iterable) {
+		Set<Fabric> set = new HashSet<Fabric>();
+		for (Fabric fabric : iterable) {
+			set.add(fabric);
+		}
+		return set;
+	}
+	
+	private Set<Pattern> convertToPatternSet(Iterable<Pattern> iterable) {
+		Set<Pattern> set = new HashSet<Pattern>();
+		for(Pattern pattern : iterable) {
+			set.add(pattern);
+		}
+		return set;
 	}
 	
 	//update garment

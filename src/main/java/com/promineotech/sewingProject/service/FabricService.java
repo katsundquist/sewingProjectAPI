@@ -29,18 +29,7 @@ public class FabricService {
 	//get all fabrics by particular user
 	public Iterable<Fabric> getFabricsByUser(Long userId){
 		return(repo.findByUserId(userId));
-//		Optional<User> userResponse = userRepo.findById(userId);
-//		if (userResponse.isPresent()) {
-//			User user = userResponse.get();
-//			return(user.getFabrics());
-//		}
-//		return(new ArrayList<Fabric>());
 	}
-	
-	//get fabric by id
-	//public Fabric getFabric(Long id) {
-		//return repo.findById(id).get();
-	//}
 	
 	public Fabric getFabric(Long userId, Long id) {
 		Optional <Fabric> responseFabric = repo.findById(id);
@@ -56,7 +45,6 @@ public class FabricService {
 		return (null);
 	}
 	
-	
 	//create fabric
 	public Fabric createFabric(Fabric fabric, Long userId) throws Exception {
 		User user = userRepo.findById(userId).get();
@@ -68,10 +56,7 @@ public class FabricService {
 	}
 	
 	//update fabric overall
-	
-	//needs FabricController
 	public Fabric updateFabric(Fabric fabric, Long userId, Long id) throws Exception {
-		//check if this User and if statement actually works.
 		User user = userRepo.findById(userId).get();
 		if (user == null) {
 			throw new Exception("User not found.");
@@ -84,8 +69,6 @@ public class FabricService {
 	}
 	
 	//delete a fabric
-	
-	//needs FabricController
 	public void deleteFabric(Long id) {
 		repo.deleteById(id);
 	}

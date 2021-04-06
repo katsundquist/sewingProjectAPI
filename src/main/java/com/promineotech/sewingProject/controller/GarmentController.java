@@ -1,5 +1,7 @@
 package com.promineotech.sewingProject.controller;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,10 +36,30 @@ public class GarmentController {
 		return new ResponseEntity<Object>("Requested garment not found", HttpStatus.NOT_FOUND);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST)
+	//createNewGarment(Set<Long> fabricIds, Set<Long> patternIds, Long notebookId
+	
+	/*
+	 * 
+	 * The old post I had before trying to allow for many to many.
+	 * 
+	 * @RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Object> createGarment(@RequestBody Garment garment, @PathVariable Long notebookId) {
 		try {
 			return new ResponseEntity<Object>(service.createGarment(garment, notebookId), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	 * 
+	 * 
+	 */
+	
+	
+	// @RequestBody Set<Long> patternId, removed from between
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds, @PathVariable Long id) {
+		try {
+			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, id), HttpStatus.CREATED);  //patternId removed from between
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}

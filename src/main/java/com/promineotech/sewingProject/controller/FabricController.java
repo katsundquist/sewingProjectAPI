@@ -55,8 +55,24 @@ public class FabricController {
 		}
 		}
 	
-	//still needs update
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Object> updateFabric(@RequestBody Fabric fabric, @PathVariable Long userId, @PathVariable Long id) {
+		try {
+			return new ResponseEntity<Object>(service.updateFabric(fabric, userId,  id), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Object>("Unable to delete fabric.", HttpStatus.BAD_REQUEST);
+		}
+	}
 	
-	//still needs delete
+
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Object> deleteFabric(@PathVariable Long id) {
+		try {
+			service.deleteFabric(id);
+			return new ResponseEntity<Object>("Sucessfully deleted product with id: " + id, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Object>("Unable to delete product.", HttpStatus.BAD_REQUEST);
+		}
+	}
 	
 }
