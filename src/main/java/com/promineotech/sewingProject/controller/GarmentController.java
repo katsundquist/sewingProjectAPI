@@ -55,11 +55,12 @@ public class GarmentController {
 	 */
 	
 	
-	// @RequestBody Set<Long> patternId, removed from between
+	// I dont think I'm allowed to have two @RequestBodys in one.  Why does that information neeed to be 
+	//accessible here?
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds, @PathVariable Long notebookId) {
+	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds, @RequestBody Set<Long> patternId, @PathVariable Long notebookId) {
 		try {
-			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, notebookId), HttpStatus.CREATED);  //patternId removed from between
+			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, patternId, notebookId), HttpStatus.CREATED);  //patternId removed from between
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
