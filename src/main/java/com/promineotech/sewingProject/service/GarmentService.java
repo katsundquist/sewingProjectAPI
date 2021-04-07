@@ -82,11 +82,11 @@ public class GarmentService {
 	}
 	*/
 	
-	//Set<Long> patternIds, removed from line below between the two
-	public Garment createNewGarment(Set<Long> fabricIds,  Set<Long> patternIds, Long notebookId){
+	//Set<Long> patternIds, removed from line below between the two  //Set<Long> patternIds,
+	public Garment createNewGarment(Set<Long> fabricIds,   Long notebookId){
 		try {
 			Notebook notebook = notebookRepo.findById(notebookId).get();
-			Garment garment = initializeNewGarment(fabricIds, patternIds, notebook);  //patternIds removed from between the two
+			Garment garment = initializeNewGarment(fabricIds, notebook);  //patternIds removed from between the two
 			return repo.save(garment);
 		} catch (Exception e) {
 			logger.error("Exception occurred while trying to create new garment");
@@ -95,15 +95,15 @@ public class GarmentService {
 	}
 	
 	//Do we have to pass the set of fabricIds and patternIds in?  This causes a problem in the controller
-	//where we're passing that data into the method.
+	//where we're passing that data into the method.  Set<Long> patternIds,
 	
-	private Garment initializeNewGarment(Set<Long> fabricIds,Set<Long> patternIds, Notebook notebook) {
+	private Garment initializeNewGarment(Set<Long> fabricIds, Notebook notebook) {
 		Garment garment = new Garment();
 		garment.setFabrics(convertToFabricSet(fabricRepo.findAllById(fabricIds)));
-		garment.setPatterns(convertToPatternSet(patternRepo.findAllById(patternIds)));
+		//garment.setPatterns(convertToPatternSet(patternRepo.findAllById(patternIds)));
 		garment.setNotebook(notebook);
 		addGarmentToFabrics(garment);
-		addGarmentToPatterns(garment);
+		//addGarmentToPatterns(garment);
 		return garment;
 	}
 	
@@ -113,14 +113,14 @@ public class GarmentService {
 			fabric.getGarments().add(garment);
 		}
 	}
-
-	private void addGarmentToPatterns(Garment garment) {
-		Set<Pattern> patterns = garment.getPatterns();
-		for(Pattern pattern : patterns) {
-			 pattern.getGarments().add(garment);
-		}
-	}
-	
+//
+//	private void addGarmentToPatterns(Garment garment) {
+//		Set<Pattern> patterns = garment.getPatterns();
+//		for(Pattern pattern : patterns) {
+//			 pattern.getGarments().add(garment);
+//		}
+//	}
+//	
 	
 	//why does it have to be converted to set?
 	private Set<Fabric> convertToFabricSet(Iterable<Fabric> iterable) {
@@ -147,7 +147,7 @@ public class GarmentService {
 		}
 		foundGarment.setName(garment.getName());
 		foundGarment.setDescription(garment.getDescription());
-		foundGarment.setPatterns(garment.getPatterns());
+		//foundGarment.setPatterns(garment.getPatterns());
 		foundGarment.setFabrics(garment.getFabrics());
 		return repo.save(foundGarment);
 	}
