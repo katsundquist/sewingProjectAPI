@@ -48,14 +48,14 @@ public class Pattern {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-//
-//	@ManyToMany(mappedBy="patterns") //,cascade = CascadeType.ALL
-//	public Set<Garment> getGarments() {
-//		return garments;
-//	}
-//
-//	public void setGarments(Set<Garment> garments) {
-//		this.garments = garments;
-//	} 
+
+	@ManyToMany(mappedBy="patterns") //,cascade = CascadeType.ALL
+	public Set<Garment> getGarments() {
+		return garments;
+	}
+
+	public void setGarments(Set<Garment> garments) {
+		this.garments = garments;
+	} 
 
 }

@@ -36,13 +36,7 @@ public class GarmentController {
 		return new ResponseEntity<Object>("Requested garment not found", HttpStatus.NOT_FOUND);
 	}
 	
-	//createNewGarment(Set<Long> fabricIds, Set<Long> patternIds, Long notebookId
-	
-	/*
-	 * 
-	 * The old post I had before trying to allow for many to many.
-	 * 
-	 * @RequestMapping(method=RequestMethod.POST)
+	 @RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<Object> createGarment(@RequestBody Garment garment, @PathVariable Long notebookId) {
 		try {
 			return new ResponseEntity<Object>(service.createGarment(garment, notebookId), HttpStatus.OK);
@@ -50,22 +44,27 @@ public class GarmentController {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	 * 
-	 * 
-	 */
 	
-	
-	// I dont think I'm allowed to have two @RequestBodys in one.  Why does that information neeed to be 
-	//accessible here? @RequestBody Set<Long> patternId,
-	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<Object> createGarment(@RequestBody Set<Long> fabricIds,  @PathVariable Long notebookId) {
+	@RequestMapping(value = "/{id}/fabrics", method=RequestMethod.POST)
+	public ResponseEntity<Object> createGarmentFabric(@RequestBody Set<Long> fabricIds,  @PathVariable Long id) {
 		try {
-			return new ResponseEntity<Object>(service.createNewGarment(fabricIds, notebookId), HttpStatus.CREATED);  //patternId removed from between
+			return new ResponseEntity<Object>(service.createNewGarmentFabric(fabricIds, id), HttpStatus.CREATED);  
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	
+	@RequestMapping(value = "/{id}/patterns", method=RequestMethod.POST)
+	public ResponseEntity<Object> createGarmentPattern(@RequestBody Set<Long> patternIds,  @PathVariable Long id) {
+		try {
+			return new ResponseEntity<Object>(service.createNewGarmentPattern(patternIds, id), HttpStatus.CREATED); 
+		} catch (Exception e) {
+			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	// this put only updates name and description, needs an additional put 
+	// to update fabrics and patterns.
 	@RequestMapping(value="/{garmentId}", method=RequestMethod.PUT)
 	public ResponseEntity<Object> updateGarment(@RequestBody Garment garment, @PathVariable Long garmentId) {
 		try {

@@ -52,8 +52,10 @@ public class GarmentService {
 		return(null);
 		
 		//this code does three queries when program runs. 
-		//the SQL statment in the repo runs four, but might actually 
-		//be more effecient with more data.  Leaving this code in  for reference.
+		//the SQL statement in the repo runs four, but might actually 
+		//be more efficient with more data.  Leaving this code in  for reference.
+		// in the real world, I would never push this code to production, but because
+		// this is a project for school, I want to leave this here for now.
 		
 //		Optional<Garment> responseGarment = repo.findById(id);
 //		if (responseGarment.isPresent()) {
@@ -69,9 +71,8 @@ public class GarmentService {
 //		return(null);
 	}
 	
-	//create garment in database
-	/*
-	 * Old method that didn't allow the many to many relationship.
+	//create garment in database, but does not tie fabrics or patterns
+	
 	public Garment createGarment(Garment garment, Long notebookId) throws Exception {
 		Notebook notebook = notebookRepo.findById(notebookId).get();
 		if (notebook == null) {
@@ -80,13 +81,14 @@ public class GarmentService {
 		garment.setNotebook(notebook);
 		return repo.save(garment);
 	}
-	*/
+
+	// adds fabric to created garment
 	
-	//Set<Long> patternIds, removed from line below between the two  //Set<Long> patternIds,
-	public Garment createNewGarment(Set<Long> fabricIds,   Long notebookId){
+	public Garment createNewGarmentFabric(Set<Long> fabricIds, Long id){
 		try {
-			Notebook notebook = notebookRepo.findById(notebookId).get();
-			Garment garment = initializeNewGarment(fabricIds, notebook);  //patternIds removed from between the two
+			Garment garment = repo.findById(id).get();
+			garment.setFabrics(convertToFabricSet(fabricRepo.findAllById(fabricIds)));
+			addGarmentToFabrics(garment);
 			return repo.save(garment);
 		} catch (Exception e) {
 			logger.error("Exception occurred while trying to create new garment");
@@ -94,17 +96,17 @@ public class GarmentService {
 		}
 	}
 	
-	//Do we have to pass the set of fabricIds and patternIds in?  This causes a problem in the controller
-	//where we're passing that data into the method.  Set<Long> patternIds,
-	
-	private Garment initializeNewGarment(Set<Long> fabricIds, Notebook notebook) {
-		Garment garment = new Garment();
-		garment.setFabrics(convertToFabricSet(fabricRepo.findAllById(fabricIds)));
-		//garment.setPatterns(convertToPatternSet(patternRepo.findAllById(patternIds)));
-		garment.setNotebook(notebook);
-		addGarmentToFabrics(garment);
-		//addGarmentToPatterns(garment);
-		return garment;
+	// adds pattern to created garment
+	public Garment createNewGarmentPattern(Set<Long> patternIds, Long id){
+		try {
+			Garment garment = repo.findById(id).get();
+			garment.setPatterns(convertToPatternSet(patternRepo.findAllById(patternIds)));
+			addGarmentToPatterns(garment);
+			return repo.save(garment);
+		} catch (Exception e) {
+			logger.error("Exception occurred while trying to create new garment");
+			throw e;
+		}
 	}
 	
 	private void addGarmentToFabrics(Garment garment) {
@@ -113,16 +115,14 @@ public class GarmentService {
 			fabric.getGarments().add(garment);
 		}
 	}
-//
-//	private void addGarmentToPatterns(Garment garment) {
-//		Set<Pattern> patterns = garment.getPatterns();
-//		for(Pattern pattern : patterns) {
-//			 pattern.getGarments().add(garment);
-//		}
-//	}
-//	
+
+	private void addGarmentToPatterns(Garment garment) {
+		Set<Pattern> patterns = garment.getPatterns();
+		for(Pattern pattern : patterns) {
+			 pattern.getGarments().add(garment);
+		}
+	}
 	
-	//why does it have to be converted to set?
 	private Set<Fabric> convertToFabricSet(Iterable<Fabric> iterable) {
 		Set<Fabric> set = new HashSet<Fabric>();
 		for (Fabric fabric : iterable) {
@@ -139,7 +139,8 @@ public class GarmentService {
 		return set;
 	}
 	
-	//update garment
+	// update garment, only working for name and description.  Needs additional work to 
+	// update fabric and pattern as well
 	public Garment updateGarment(Garment garment, Long id) throws Exception {
 		Garment foundGarment = repo.findById(id).get();
 		if (foundGarment == null) {
@@ -147,8 +148,6 @@ public class GarmentService {
 		}
 		foundGarment.setName(garment.getName());
 		foundGarment.setDescription(garment.getDescription());
-		//foundGarment.setPatterns(garment.getPatterns());
-		foundGarment.setFabrics(garment.getFabrics());
 		return repo.save(foundGarment);
 	}
 	

@@ -2,7 +2,6 @@ package com.promineotech.sewingProject.entity;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -71,7 +70,7 @@ public class Fabric {
 		this.user = user;
 	}
 
-	@ManyToMany(mappedBy = "fabrics") //, cascade = CascadeType.ALL
+	@ManyToMany(mappedBy = "fabrics")
 	public Set<Garment> getGarments() {
 		return garments;
 	}

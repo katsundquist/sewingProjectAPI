@@ -62,17 +62,17 @@ public class Garment {
 		this.notebook = notebook;
 	}
 
-//	@ManyToMany(cascade = CascadeType.ALL)
-//	@JoinTable(name = "garment_pattern",
-//	           joinColumns = @JoinColumn(name = "garment_id", referencedColumnName = "id"),
-//	           inverseJoinColumns = @JoinColumn(name = "pattern_id", referencedColumnName = "id"))
-//	public Set<Pattern> getPatterns() {
-//		return patterns;
-//	}
-//
-//	public void setPatterns(Set<Pattern> patterns) {
-//		this.patterns = patterns;
-//	}
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "garment_pattern",
+	           joinColumns = @JoinColumn(name = "garment_id", referencedColumnName = "id"),
+	           inverseJoinColumns = @JoinColumn(name = "pattern_id", referencedColumnName = "id"))
+	public Set<Pattern> getPatterns() {
+		return patterns;
+	}
+
+	public void setPatterns(Set<Pattern> patterns) {
+		this.patterns = patterns;
+	}
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "garment_fabric",

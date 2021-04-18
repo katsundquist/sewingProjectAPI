@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.promineotech.sewingProject.entity.Fabric;
-import com.promineotech.sewingProject.entity.Notebook;
 import com.promineotech.sewingProject.entity.User;
 import com.promineotech.sewingProject.repository.FabricRepository;
 import com.promineotech.sewingProject.repository.UserRepository;

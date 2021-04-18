@@ -25,5 +25,4 @@ public interface GarmentRepository extends CrudRepository<Garment, Long>{
     
     public List<Garment> findByNotebookId(Long notebookId); 
     
-    //public List<Fabric> findByUserId(Long userId); 
 }
